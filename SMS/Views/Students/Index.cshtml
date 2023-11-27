@@ -1,0 +1,25 @@
+﻿@model List<StudentVM>
+@{
+    ViewData["Title"] = "Students";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Students <a class="btn btn-primary" asp-controller="Students" asp-action="Create">Add</a></h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Reg. No</th>
+    </tr>
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.Id</td>
+            <td>@student.Name</td>
+            <td>@student.Email</td>
+            <td>@student.RegNo</td>
+        </tr>
+    }
+</table>
